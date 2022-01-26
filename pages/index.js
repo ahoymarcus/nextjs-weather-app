@@ -1,11 +1,8 @@
 // NEWS API
 // https://newsapi.org/
 // https://www.youtube.com/watch?v=xtItzwYG6oQ
-// 0 hrs 17' 50''
+// 0 hrs 31' 40''
 import Head from 'next/head';
-
-// styles
-
 
 // components
 import SearchBox from '../components/SearchBox';
