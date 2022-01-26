@@ -4,6 +4,9 @@ import Head from 'next/head';
 // resource
 import cities from '../../lib/city.list.json';
 
+// components
+import TodayWeather from '../../components/TodayWeather';
+
 
 
 /*
@@ -108,8 +111,12 @@ export default function city({
 			<Head>
 				<title>{city.name} Weather - Next-JS App</title>
 			</Head>
-			<h1>City Page</h1>
-			<h2></h2>
+			
+			<div className="page-wrapper">
+				<div className="container">
+					<TodayWeather city={city} weather={dailyWeather[0]} />
+				</div>
+			</div>
 		</div>
 	);
 };

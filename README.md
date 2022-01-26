@@ -3,19 +3,20 @@
 
 <br />
 
-Um app Next.JS que renderiza informações do tempo de cidades ao redor do mundo utilizando a API Open Weather (https://openweathermap.org/), passando alguns parâmetros para a requição definindo número de artigos por página e a página propriamente dita que é passada de forma dinâmica na URL.:[^1]
+Um app Next.JS que renderiza informações do tempo de cidades ao redor do mundo utilizando a API Open Weather (https://openweathermap.org/), passando alguns parâmetros definir o retorno dos dados.:[^1]
 
 <br />
 
-Abaixo temos o endereço de notícias da API em que passamos 3 parâmetros, sendo o 3º o parâmetro dinâmico:
+Abaixo temos um exemplo da requisição à API Open Weather em que passamos 5 parâmetros, um deles o valor do token de inscrição no site da API. Outros valores dizem respeito:
 
-1.  
-2.  
-3.  
+1. Latitude 
+2. Longitude
+3. Medida de unidade
+4. Redução na quantidade de dados retornados  
 
 
 ```
-
+`https://api.openweathermap.org/data/2.5/onecall?lat=${city.coord.lat}&lon=${city.coord.lon}&appid=${the-value-from-the-API-KEY-here}&units=metric&exclude=minutely`
 ```
 
 
