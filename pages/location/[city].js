@@ -10,7 +10,6 @@ import cities from '../../lib/city.list.json';
 */
 export async function getServerSideProps(context) {
 	const city = getCity(context.params.city);
-	const slug = context.params.city;
 	
 	console.log(city);
 	
@@ -21,9 +20,26 @@ export async function getServerSideProps(context) {
 		};
 	}
 	
+
+	const response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${city.coord.lat}&lon=${city.coord.lon}&appid=${process.env.API_KEY}&units=metric&exclude=minutely`);
+	const apiData = await response.json();
+	
+	if (!apiData) {
+		return {
+			notFound: true
+		};
+	}
+	
+	console.log(apiData);
+	
+	
+	const slug = context.params.city;
+	
+	
 	return {
 		props: {
-			slug
+			slug,
+			data: apiData
 		}
 	};
 };
