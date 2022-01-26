@@ -35,6 +35,7 @@ Dependências:
 - Sass
 - Dotenv
 - Moment
+- Moment-timezone
 - Nprogress
 
 
