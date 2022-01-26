@@ -1,5 +1,8 @@
 import React from 'react';
 
+// resource
+import cities from '../../lib/city.list.json';
+
 
 
 /*
@@ -9,6 +12,14 @@ export async function getServerSideProps(context) {
 	const city = getCity(context.params.city);
 	const slug = context.params.city;
 	
+	console.log(city);
+	
+	// using Next-JS 404
+	if (!city) {
+		return {
+			notFound: true,
+		};
+	}
 	
 	return {
 		props: {
@@ -27,6 +38,18 @@ const getCity = param => {
 	const id = splitCity[splitCity.length - 1];
 	
 	console.log(id, splitCity);
+	
+	if (!id) {
+		return null;
+	}
+	
+	const city = cities.find(city => city.id.toString() === id);
+	
+	if (city) {
+		return city;
+	} else {
+		 return null;
+	}
 };
 
 
