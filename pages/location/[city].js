@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 
 // resource
 import cities from '../../lib/city.list.json';
@@ -38,8 +39,10 @@ export async function getServerSideProps(context) {
 	
 	return {
 		props: {
-			slug,
-			data: apiData
+			city,
+			currentWeather: apiData.current,
+			dailyWeather: apiData.daily,
+			hourlyWeather: getHourlyWeather(apiData.hourly),
 		}
 	};
 };
@@ -68,14 +71,45 @@ const getCity = param => {
 	}
 };
 
+// aux funtion
+const getHourlyWeather = (hourlyData) => {
+	// current time
+	const current = new Date();
+	
+	// get round hour
+	current.setHours(current.getHours(), 0, 0, 0);
+	
+	const tomorow = new Date(current);
+	tomorow.setDate(tomorow.getDate() + 1);
+	
+	// set hour to midnight
+	tomorow.setHours(0, 0, 0, 0);
+	
+	// divide by 1000 to get timestamps in seconds
+	const currentTimeStamp = Math.floor(current.getTime() / 1000);
+	const tomoroTimeStamp = Math.floor(tomorow.getTime() / 1000);
+	
+	const todayData = hourlyData.filter(data => data.dt < tomoroTimeStamp);
+	
+	return todayData;
+};
 
-export default function city({ slug }) {
+export default function city({ 
+	city, 
+	currentWeather, 
+	dailyWeather, 
+	hourlyWeather 
+}) {
+	console.log(hourlyWeather);
 	
 	
 	return (
 		<div>
+			<Head>
+				<title>{city.name} Weather - Next-JS App</title>
+			</Head>
 			<h1>City Page</h1>
-			<h2>{slug}</h2>
+			<h2></h2>
 		</div>
 	);
 };
