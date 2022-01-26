@@ -1,6 +1,6 @@
-// NEWS API
-// https://newsapi.org/
-// https://www.youtube.com/watch?v=xtItzwYG6oQ
+// Weather API
+// https://openweathermap.org/
+// https://www.youtube.com/watch?v=6UlpfXQWysg&t=1905s
 // 0 hrs 31' 40''
 import Head from 'next/head';
 
