@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import moment from 'moment-timezone';
 
 // resource
@@ -108,6 +109,10 @@ export default function city({
 			
 			<div className="page-wrapper">
 				<div className="container">
+					<Link href="/">
+						<a className="back-link">&larr; Home</a>
+					</Link>
+					
 					<SearchBox placeholder="Search for another location..." />
 				
 					<TodayWeather 

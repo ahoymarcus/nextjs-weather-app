@@ -80,7 +80,7 @@ const SearchBox = ({ placeholder }) => {
 								>
 									<a>
 										{city.name}
-										{city.state ? `, ${city.state}` : ''}
+										{city.state ? `, ${city.state}` : ''}{' '}
 										<span>({city.country})</span>
 									</a>
 								</Link>
