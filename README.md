@@ -23,7 +23,7 @@ Abaixo temos um exemplo da requisição à API Open Weather em que passamos 5 pa
 <br />
 
 
-- [my Next-JS Blog App em Vercel]()
+- [my Next-JS Blog App em Vercel](https://nextjs-weather-app-dun.vercel.app/)
 
 
 <br />
