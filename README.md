@@ -43,34 +43,27 @@ Dependências:
 <br />
 
 
-### I:
+### Imagem da Home Page do Weather App:
 
-![Imagem do News Blog App na página Home](/public/images/)
-
-
-<br />
-
-
-### I:
-
-![Imagem da página de feed do News Blog App](/public/images/)
+![Imagem da Home Page do Weather App](/public/images/nextjs-weather-app-01.png)
 
 
 <br />
 
 
-### I:
+### Imagem do sistema de pesquisa do app:
 
-![Imagem do News Blog App na página Home](/public/images/)
+![Imagem do sistema de pesquisa do app](/public/images/nextjs-weather-app-02.png)
 
 
 <br />
 
 
+### Imagem da página de uma cidade para o Weather App:
 
-### I:
+![Imagem da página de uma cidade para o Weather App](/public/images/nextjs-weather-app-03.png)
 
-![Imagem do News Blog App na página Home](/public/images/)
+
 
 
 
@@ -81,4 +74,4 @@ Dependências:
 <br />
 
 
-[^1]: PortEXE - Youtube 
+[^1]: Matt The Dev - Youtube 
