@@ -36,7 +36,10 @@ const TodayWeather = ({ city, weather, timezone }) => {
 				<div className="today__right-content">
 					<div className="today__icon-wrapper">
 						<div>
-							<Image src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="Weather Icon" layout="fill" />
+							<Image 
+							src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+							alt={weather.weather[0].description}
+							layout="fill" />
 						</div>
 					</div>
 					

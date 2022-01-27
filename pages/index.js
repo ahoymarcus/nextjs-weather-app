@@ -1,7 +1,7 @@
 // Weather API
 // https://openweathermap.org/
 // https://www.youtube.com/watch?v=6UlpfXQWysg&t=1905s
-// 1 hrs  23' 20''
+// 1 hrs  42' 00''
 import Head from 'next/head';
 
 // components
@@ -19,7 +19,7 @@ export default function Home() {
 			
 			<div className="home">
 				<div className="container">
-					<SearchBox />
+					<SearchBox placeholder="Search for a city..." />
 					{/* */}
 				</div>
 			</div>

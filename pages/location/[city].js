@@ -6,8 +6,10 @@ import moment from 'moment-timezone';
 import cities from '../../lib/city.list.json';
 
 // components
+import SearchBox from '../../components/SearchBox';
 import TodayWeather from '../../components/TodayWeather';
 import HourlyWeather from '../../components/HourlyWeather';
+import WeeklyWeather from '../../components/WeeklyWeather';
 
 
 
@@ -106,6 +108,8 @@ export default function city({
 			
 			<div className="page-wrapper">
 				<div className="container">
+					<SearchBox placeholder="Search for another location..." />
+				
 					<TodayWeather 
 						city={city} 
 						weather={dailyWeather[0]} 
@@ -113,6 +117,8 @@ export default function city({
 					/>
 					
 					<HourlyWeather hourlyWeather={hourlyWeather} timezone={timezone} />
+					
+					<WeeklyWeather weeklyWeather={dailyWeather} timezone={timezone} />
 				</div>
 			</div>
 		</div>

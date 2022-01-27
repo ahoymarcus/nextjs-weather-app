@@ -7,7 +7,7 @@ import cities from '../lib/city.list.json';
 
 
 
-const SearchBox = () => {
+const SearchBox = ({ placeholder }) => {
 	const [ query, setQuery ] = useState('');
 	const [ results, setResults ] = useState([]);
 	
@@ -52,6 +52,7 @@ const SearchBox = () => {
 				type="text"
 				value={query}
 				onChange={(e) => onChange(e)}
+				placeholder={placeholder ? placeholder : ''}
 			/>
 			
 			{query.length > 3 && (
