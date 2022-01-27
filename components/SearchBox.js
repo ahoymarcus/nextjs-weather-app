@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Router from 'next/router';
 
 // resource
 import cities from '../lib/city.list.json';
@@ -11,6 +12,20 @@ const SearchBox = ({ placeholder }) => {
 	const [ query, setQuery ] = useState('');
 	const [ results, setResults ] = useState([]);
 	
+	
+	React.useEffect(() => {
+		const clearQuery = () => setQuery('');
+		
+		/*
+			O objeto Router do Next-JS escutará por mudanças de páginas, para chamar a limpeza do elemento input.....
+		*/
+		Router.events.on('routeChangeComplete', clearQuery);
+		
+		// Limpar, quando Unmount
+		return () => {
+			Router.events.off('routeChangeComplete', clearQuery);
+		};
+	}, []);
 	
 	
 	const onChange = (e) => {

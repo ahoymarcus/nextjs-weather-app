@@ -1,7 +1,7 @@
 // Weather API
 // https://openweathermap.org/
 // https://www.youtube.com/watch?v=6UlpfXQWysg&t=1905s
-// 1 hrs  42' 00''
+// 1 hrs  48' 00''
 import Head from 'next/head';
 
 // components
