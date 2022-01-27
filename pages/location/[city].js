@@ -7,6 +7,7 @@ import cities from '../../lib/city.list.json';
 
 // components
 import TodayWeather from '../../components/TodayWeather';
+import HourlyWeather from '../../components/HourlyWeather';
 
 
 
@@ -82,9 +83,9 @@ const getHourlyWeather = (hourlyData, timezone) => {
 	
 	const endOfDayTimeStamp = Math.floor(endOfDay / 1000);
 	
-	const todayData = hourlyData.filter(data => data.dt < endOfDayTimeStamp);
+	const todaysData = hourlyData.filter(data => data.dt < endOfDayTimeStamp);
 	
-	return todayData;
+	return todaysData;
 };
 
 export default function city({ 
@@ -110,6 +111,8 @@ export default function city({
 						weather={dailyWeather[0]} 
 						timezone={timezone}
 					/>
+					
+					<HourlyWeather hourlyWeather={hourlyWeather} timezone={timezone} />
 				</div>
 			</div>
 		</div>
